@@ -3,29 +3,36 @@
 require_once 'AppController.php';
 class DefaultController extends AppController {
 
-    public function index()
+    public function home()
     {
-        //TODO display login.html
         $this->render('home');
     }
-    public function login()
+    public function index() //TODO moze psuc, zmien na index
     {
-        //TODO display login.html
-        $this->render('login');
+        $this->render('login', ['messages' => ["Hello World!", "XDDDD"]]);
     }
     public function registration()
     {
-        //TODO display register.html
         $this->render('registration');
     }
     public function menu()
     {
-        //TODO display register.html
         $this->render('menu');
     }
-    public function projects()
+    public function plan()
     {
-        //TODO display projects.html
-        $this->render('projects');
+        $this->render('plan');
+    }
+    public function forum()
+    {
+        $this->render('forum');
+    }
+    public function announcements()
+    {
+        $this->render('announcements');
+    }
+    public function addProject()
+    {
+        $this->render('addProject');
     }
 }

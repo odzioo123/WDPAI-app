@@ -11,34 +11,42 @@ body {
     align-items: center;
 }
 
-.logo{
-    width: 50%;
-    text-align: center;
+.back
+{
+    margin-top: 32em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+    border-radius: 2.5rem;
 }
 
-.register-container{
-    width: 50%;
-}
-
-form{
+.plan
+{
+    margin-top: 2em;
+    margin-right: 5em;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
 
-    border-radius: 2.5rem;
+    background-color: gainsboro;
+    height: 80%;
 }
 
 button{
     border-radius: 2.5rem;
     background: radial-gradient(50% 50% at 50% 50%, #17C3B2 0%, rgba(23, 195, 178, 0.49) 100%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 50%;
-    height: 10vh;
+    width: 70%;
+    height: 7vh;
     border: none;
     color: white;
-    margin: 3em;
+    margin: 1em;
     font-size: 1.4em;
     cursor: pointer;  /*łapka*/
     outline: none;
@@ -54,50 +62,26 @@ button:active {
     transform: translateY(4px);
 }
 
-input{
-    border-radius: 2.5rem;
-    border-bottom: 1px solid grey;
-    background: #E0E0E0;
-    padding: 1em;
-    margin: 0.7em;
-    width: 50%;
-    height: 5vh;
-    text-align: center;
-    font-size: 1.4em;
-
-}
 
 @media only screen and (max-device-width: 420px)
 {
-    .container{
-        flex-direction: column;
-    }
-
     *{
         font-size: 36px;
     }
-
-    .register-container, .logo {
-        width: 100%;
-    }
-
-    form{
+    .container{
+        flex-direction: column-reverse;
         margin: auto;
     }
-
-    .logo{
-        height: 25vh;
-        align-items: center;
-        justify-content: center;
+    .plan
+    {
+        margin: 2em 1em 1em;
+        height: 100%;
+        width: 85%;
     }
-
-    img{
-        height: 90%;
-        width: 50%;
-    }
-
-    button{
+    .back
+    {
+        margin: auto;
+        height: 12%;
         width: 60%;
-        height: 10vh;
     }
 }
