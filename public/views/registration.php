@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/registration.css">
+    <link rel="stylesheet" type="text/css" href="public/css/registration.css">
     <title>Registration Page</title>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <img src="../img/logo.svg">
+            <img src="public/img/logo.svg" alt="logo-image">
         </div>
-        <div class="login-container">
+        <div class="register-container">
             <form>
                 <input name="email" type="text" placeholder="email">
                 <input name="username" type="text" placeholder="username">

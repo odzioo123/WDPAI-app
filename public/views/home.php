@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="public/css/home.css">
     <title>First Page</title>
 </head>
 <body>
 <div class="container">
     <div class="logo">
-        <img src="../img/logo.svg" alt="logo-image">
+        <img src="public/img/logo.svg" alt="logo-image">
     </div>
     <div class="options-container">
         <form>
