@@ -7,9 +7,15 @@
 <body>
 <div class="container">
     <div class="back">
-        <button>Back</button>
+        <button id="backButton">Back</button>
     </div>
     <div class="announcements"></div>
+
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'menu';
+        });
+    </script>
 </div>
 </body>
 </html>

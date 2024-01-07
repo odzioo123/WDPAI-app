@@ -11,6 +11,16 @@ body {
     align-items: center;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+    border-radius: 2.5rem;
+}
+
 .back
 {
     margin-top: 32em;
@@ -61,7 +71,6 @@ button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-
 
 @media only screen and (max-device-width: 420px)
 {

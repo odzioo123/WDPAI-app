@@ -23,7 +23,8 @@ class Routing {
 
         if(!array_key_exists($action, self::$routes))
         {
-            die("Wrong url!");
+            $controller = new DefaultController();
+            $controller->home();
         }
         $controller = self::$routes[$action];
         $object = new $controller;
