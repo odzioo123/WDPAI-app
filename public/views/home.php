@@ -10,11 +10,15 @@
         <img src="public/img/logo.svg" alt="logo-image">
     </div>
     <div class="options-container">
-        <form>
-            <button>Log in</button>
+        <form method="get" action="login">
+            <button id="loginButton">Log in</button>
+        </form>
+        <form method="get" action="registration">
             <button>Register</button>
         </form>
     </div>
 </div>
+
+
 </body>
 </html>
