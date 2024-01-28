@@ -7,7 +7,7 @@ class DefaultController extends AppController {
     {
         $this->render('home');
     }
-    public function index() //TODO moze psuc, zmien na index
+    public function login()
     {
         $this->render('login', ['messages' => ["Hello World!", "XDDDD"]]);
     }
