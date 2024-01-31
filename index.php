@@ -1,6 +1,5 @@
-
 <?php
-//        echo 'Hola mi amigo <3';
+
 require 'Routing.php';
 
 $path = trim($_SERVER['REQUEST_URI'], '/');
@@ -15,12 +14,12 @@ Routing::get('forum', 'DefaultController');
 Routing::get('announcements', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
+Routing::post('logout', 'SecurityController');
 
 Routing::get('addProject', 'DefaultController');
 Routing::post('addProject', 'ProjectController');
 
+
 Routing::run($path);
-
-
 
 

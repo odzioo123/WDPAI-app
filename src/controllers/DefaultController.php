@@ -1,6 +1,9 @@
 <?php
 
+use models\Announcement;
+
 require_once 'AppController.php';
+require_once __DIR__.'/../models/Announcement.php';
 class DefaultController extends AppController {
 
     public function home()
@@ -9,7 +12,7 @@ class DefaultController extends AppController {
     }
     public function login()
     {
-        $this->render('login', ['messages' => ["Hello World!", "XDDDD"]]);
+        $this->render('login', ['messages' => ["Hello World!"]]);
     }
     public function registration()
     {
@@ -17,19 +20,51 @@ class DefaultController extends AppController {
     }
     public function menu()
     {
-        $this->render('menu');
+        session_start();
+        if (isset($_SESSION['Admin']) || isset($_SESSION['Student']))
+        {
+            $this->render('menu');
+        }
+        else
+        {
+            $this->render('login');
+        }
     }
     public function plan()
     {
-        $this->render('plan');
+        session_start();
+        if (isset($_SESSION['Admin']) || isset($_SESSION['Student']))
+        {
+            $this->render('plan');
+        }
+        else
+        {
+            $this->render('login');
+        }
     }
     public function forum()
     {
-        $this->render('forum');
+        session_start();
+        if (isset($_SESSION['Admin']) || isset($_SESSION['Student']))
+        {
+            $this->render('forum');
+        }
+        else
+        {
+            $this->render('login');
+        }
     }
     public function announcements()
     {
-        $this->render('announcements');
+        session_start();
+        if (isset($_SESSION['Admin']) || isset($_SESSION['Student']))
+        {
+            $this->render('announcements');
+        }
+        else
+        {
+            $this->render('login');
+        }
     }
     public function addProject()
     {

@@ -1,11 +1,11 @@
 <?php
 
-
 use models\User;
 
 require_once __DIR__.'/../repository/UserRepository.php';
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+
 class SecurityController extends AppController
 {
     public function login()
@@ -17,7 +17,6 @@ class SecurityController extends AppController
 
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $hash = password_hash($password, PASSWORD_BCRYPT);
         $userRepository = new UserRepository();
 
 //        $user2 = new User(2,'ddd', password_hash('zzz', PASSWORD_BCRYPT), 1, 1, 'zzz', 'zzz');
@@ -35,9 +34,25 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email don\'t exist']]);
         }
 
-        if(password_verify($user->getPassword(), $hash))
+        if(!password_verify($password, $user->getPassword()))
         {
             return $this->render('login', ['messages' => ['Wrong data provided']]);
+        }
+
+
+        if($user->getRole() == 1)
+        {
+            session_start();
+            $_SESSION['Admin'] = $user->getUserID();
+        }
+        else if($user->getRole() == 2)
+        {
+            session_start();
+            $_SESSION['Student'] = $user->getUserID();
+        }
+        else
+        {
+            return $this->render('login');
         }
 
         return $this->render('menu');
@@ -45,4 +60,15 @@ class SecurityController extends AppController
 //        $url = "http://$_SERVER[HTTP_HOST]";
 //        header("Location: {$url}/menu");
     }
+
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        $this->render('login');
+    }
+
+
+
 }

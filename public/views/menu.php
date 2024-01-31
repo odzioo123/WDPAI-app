@@ -16,7 +16,7 @@
         <form method="get" action="forum">
             <button>Forum</button>
         </form>
-        <form method="get" action="login">
+        <form method="post" action="logout">
             <div class="logout">
                 <button>Wyloguj</button>
             </div>

@@ -11,23 +11,13 @@ body {
     align-items: center;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-
-    border-radius: 2.5rem;
-}
-
-.back
+.buttons
 {
+    margin-left: 1em;
     margin-top: 32em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 30%;
 
     border-radius: 2.5rem;
@@ -36,16 +26,35 @@ form{
 .forum
 {
     margin-top: 2em;
-    margin-right: 5em;
+    margin-right: 10em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
+    border-radius: 1rem;
 
     background-color: aquamarine;
     height: 80%;
+}
+
+.forumPostList {
+    overflow: auto;
+    max-height: 90%;
+    min-height: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    padding: 0.5em;
+    margin: 3em;
+    border-radius: 0.5rem;
+    background-color: darkslateblue; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+}
+
+.forumPostItem p {
+    word-wrap: break-word;
+    max-width: 99%;
 }
 
 button{
@@ -72,6 +81,25 @@ button:active {
     transform: translateY(4px);
 }
 
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+#forumPostText {
+    width: 70%;
+    height: 100px;
+    border-radius: 1rem;
+    border: none;
+    margin: 1em;
+    font-size: 1em;
+    padding: 0.5em;
+    resize: none;
+}
+
 @media only screen and (max-device-width: 420px)
 {
     *{
@@ -94,14 +122,3 @@ button:active {
         width: 60%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

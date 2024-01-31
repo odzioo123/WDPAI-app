@@ -1,6 +1,5 @@
 <?php
 
-
 use models\User;
 use repository\Repository;
 
@@ -84,7 +83,4 @@ class UserRepository extends Repository
         // Return the overall result
         return $resultDetails;
     }
-
-
-
 }

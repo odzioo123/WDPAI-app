@@ -25,6 +25,7 @@ class Routing {
         {
             $controller = new DefaultController();
             $controller->home();
+            exit;
         }
         $controller = self::$routes[$action];
         $object = new $controller;
