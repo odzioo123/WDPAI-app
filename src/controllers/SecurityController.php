@@ -43,10 +43,16 @@ class SecurityController extends AppController
         if($user->getRole() == 1)
         {
             session_start();
+            session_unset();
+            session_destroy();
+            session_start();
             $_SESSION['Admin'] = $user->getUserID();
         }
         else if($user->getRole() == 2)
         {
+            session_start();
+            session_unset();
+            session_destroy();
             session_start();
             $_SESSION['Student'] = $user->getUserID();
         }

@@ -16,6 +16,11 @@
         <form method="get" action="forum">
             <button>Forum</button>
         </form>
+        <?php if(isset($_SESSION['Admin'])): ?>
+            <form  method="get" action="addStudent">
+                <button>Add Student</button>
+            </form>
+        <?php endif; ?>
         <form method="post" action="logout">
             <div class="logout">
                 <button>Wyloguj</button>

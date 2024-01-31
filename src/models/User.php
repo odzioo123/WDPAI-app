@@ -7,7 +7,6 @@ class User
     private $userID;
     private $email;
     private $password;
-    private $groupID;
     private $role;
     private $name;
     private $surname;
@@ -16,7 +15,6 @@ class User
         int $userID,
         string $email,
         string $password,
-        int $groupID,
         int $role,
         string $name,
         string $surname
@@ -24,7 +22,6 @@ class User
         $this->userID = $userID;
         $this->email = $email;
         $this->password = $password;
-        $this->groupID = $groupID;
         $this->role = $role;
         $this->name = $name;
         $this->surname = $surname;
@@ -53,16 +50,6 @@ class User
     public function getPassword(): string
     {
         return $this->password;
-    }
-
-    public function setGroupID(int $groupID)
-    {
-        $this->groupID = $groupID;
-    }
-
-    public function getGroupID(): int
-    {
-        return $this->groupID;
     }
 
     public function setRole(int $role)

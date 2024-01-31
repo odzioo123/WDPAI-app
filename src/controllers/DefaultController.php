@@ -66,6 +66,19 @@ class DefaultController extends AppController {
             $this->render('login');
         }
     }
+    public function addStudent()
+    {
+        session_start();
+        if (isset($_SESSION['Admin']))
+        {
+            $this->render('addStudent');
+        }
+        else
+        {
+            $this->render('login');
+        }
+    }
+
     public function addProject()
     {
         $this->render('addProject');

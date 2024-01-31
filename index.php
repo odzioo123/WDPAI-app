@@ -16,6 +16,9 @@ Routing::get('announcements', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 
+Routing::get('addStudent', 'DefaultController');
+Routing::post('addStudentProcess', 'AddStudentController');
+
 Routing::get('addProject', 'DefaultController');
 Routing::post('addProject', 'ProjectController');
 
