@@ -9,7 +9,7 @@ Routing::get('home', 'DefaultController');
 Routing::get('login', 'DefaultController');
 Routing::get('registration', 'DefaultController');
 Routing::get('menu', 'DefaultController');
-Routing::get('plan', 'DefaultController');
+Routing::get('plan', 'PlanController');
 Routing::get('forum', 'DefaultController');
 Routing::get('announcements', 'DefaultController');
 
