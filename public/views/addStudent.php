@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="public/css/addStudent.css">
     <title>Add Student</title>
 </head>
 <body>

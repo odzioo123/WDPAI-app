@@ -62,7 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addForumPostButton'])
         <div class="forumPostList">
             <?php foreach ($forumPosts as $forumPost): ?>
                 <div class="forumPostItem">
-                    <p><?= htmlspecialchars($forumPost->getText()) . ' | ' . htmlspecialchars($forumPost->getTimePublished()) ?></p>
+                    <?php
+                        $userRepository = new UserRepository();
+                        $user = $userRepository->getUserById($forumPost->getUserID());
+                        $userName = $user ? $user->getName() : 'Unknown User';
+                    ?>
+                    <p><?= htmlspecialchars($forumPost->getText()) . ' | ' . htmlspecialchars($forumPost->getTimePublished()) . ' | ' . $userName ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

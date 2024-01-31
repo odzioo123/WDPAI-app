@@ -17,8 +17,11 @@
             <button>Forum</button>
         </form>
         <?php if(isset($_SESSION['Admin'])): ?>
-            <form  method="get" action="addStudent">
+            <form method="get" action="addStudent">
                 <button>Add Student</button>
+            </form>
+            <form method="get" action="addUserToGroup">
+                <button>Add Student to Group</button>
             </form>
         <?php endif; ?>
         <form method="post" action="logout">
@@ -28,7 +31,5 @@
         </form>
     </div>
 </div>
-
-
 </body>
 </html>

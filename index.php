@@ -22,6 +22,8 @@ Routing::post('addStudentProcess', 'AddStudentController');
 Routing::get('addProject', 'DefaultController');
 Routing::post('addProject', 'ProjectController');
 
+Routing::get('addUserToGroup', 'DefaultController');
+Routing::post('addUserToGroupProcess', 'AddUserToGroupController');
 
 Routing::run($path);
 

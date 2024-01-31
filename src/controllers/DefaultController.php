@@ -79,6 +79,19 @@ class DefaultController extends AppController {
         }
     }
 
+    public function addUserToGroup()
+    {
+        session_start();
+        if (isset($_SESSION['Admin']))
+        {
+            $this->render('addUserToGroup');
+        }
+        else
+        {
+            $this->render('login');
+        }
+    }
+
     public function addProject()
     {
         $this->render('addProject');
