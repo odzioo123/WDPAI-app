@@ -14,7 +14,7 @@ body {
 .buttons
 {
     margin-left: 2em;
-    margin-top: 32em;
+    margin-top: 30em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,7 @@ body {
 .announcements
 {
     margin-top: 2em;
-    margin-right: 10em;
+    margin-right: 6em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
@@ -103,22 +103,34 @@ button:active {
 @media only screen and (max-device-width: 420px)
 {
     *{
-        font-size: 36px;
+        font-size: 22px;
     }
     .container{
         flex-direction: column-reverse;
-        margin: auto;
+        margin-bottom: auto;
     }
-    .announcements
-    {
-        margin: 2em 1em 1em;
-        height: 100%;
+    .announcements {
+        height: 65%;
         width: 85%;
+        margin: 1em auto 15em;
     }
-    .buttons
-    {
-        margin: auto;
+    .buttons {
+        margin-top: 1px;
         height: 12%;
-        width: 60%;
+        width: 65%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1px;
+        margin-bottom: 13em;
+    }
+    button {
+        font-size: 1.8em;
+    }
+    #announcementText {
+        font-size: 1.3em;
     }
 }

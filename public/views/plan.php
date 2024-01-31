@@ -9,57 +9,62 @@
     <div class="back">
         <button id="backButton">Back</button>
     </div>
-    <div class="plan">
+    <div class="plan" id="planContainer">
         <?php
         // Organize courses by days
         $coursesByDay = [];
         foreach ($courses as $course) {
-            $coursesByDay[$course->getDay()][] = $course;
+            $coursesByDay[$course->getDay()][] = [
+                'courseName' => $course->getCourseName(),
+                'courseStart' => $course->getCourseStart(),
+                'courseEnd' => $course->getCourseEnd(),
+                'lecturer' => $course->getLecturer(),
+            ];
         }
-
-        displayCoursesForDay('Monday', $coursesByDay);
-        displayCoursesForDay('Tuesday', $coursesByDay);
-        displayCoursesForDay('Wednesday', $coursesByDay);
-        displayCoursesForDay('Thursday', $coursesByDay);
-        displayCoursesForDay('Friday', $coursesByDay);
         ?>
-    </div>
+
+        <script>
+            const coursesByDay = <?= json_encode($coursesByDay); ?>;
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+            const planContainer = document.getElementById('planContainer');
+
+            days.forEach(day => {
+                const dayColumn = document.createElement('div');
+                dayColumn.classList.add('day-column');
+                dayColumn.innerHTML = `<p>${day}</p>`;
+
+                if (coursesByDay[day]) {
+                    // Sort courses by time
+                    coursesByDay[day].sort((a, b) => {
+                        return new Date('1970/01/01 ' + a.courseStart) - new Date('1970/01/01 ' + b.courseStart);
+                    });
+
+                    coursesByDay[day].forEach(course => {
+                        const courseElement = document.createElement('div');
+                        courseElement.classList.add('course');
+                        courseElement.innerHTML = `
+                    <p>${course.courseName}</p>
+                    <p>${course.courseStart} - ${course.courseEnd}</p>
+                    <p>${course.lecturer}</p>
+                `;
+                        dayColumn.appendChild(courseElement);
+                    });
+                } else {
+                    const noCoursesElement = document.createElement('p');
+                    noCoursesElement.textContent = `No courses for ${day}`;
+                    dayColumn.appendChild(noCoursesElement);
+                }
+
+                planContainer.appendChild(dayColumn);
+            });
+        </script>
 
     <script>
-        document.getElementById('backButton').addEventListener('click', function() {
+        document.getElementById('backButton').addEventListener('click', function () {
             window.location.href = 'menu';
         });
     </script>
 </div>
 </body>
-</html>
-
-<?php
-function displayCoursesForDay($day, $coursesByDay)
-{
-    echo '<div class="day-column">';
-    echo '<p>' . $day . '</p>';
-
-    if (isset($coursesByDay[$day])) {
-        // Sort courses by time
-        usort($coursesByDay[$day], function ($a, $b)
-        {
-            return strtotime($a->getCourseStart()) - strtotime($b->getCourseStart());
-        });
-
-        foreach ($coursesByDay[$day] as $course): ?>
-            <div class="course">
-                <p><?php echo $course->getCourseName(); ?></p>
-                <p><?php echo $course->getCourseStart() . ' - ' . $course->getCourseEnd(); ?></p>
-                <p><?php echo $course->getLecturer(); ?></p>
-            </div>
-        <?php endforeach;
-    } else {
-        echo '<p>No courses for ' . $day . '</p>';
-    }
-
-    echo '</div>';
-}
-?>
-
 </html>
