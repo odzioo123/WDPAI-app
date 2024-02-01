@@ -25,16 +25,18 @@ form{
     border-radius: 2.5rem;
 }
 
-.logout
-{
-    margin-top: 4em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+label {
+    margin-bottom: 0.5em;
+    color: white;
+    font-size: 1.2em;
+}
 
-    border-radius: 2.5rem;
+input {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #17C3B2;
+    border-radius: 0.3em;
+    width: 25%;
 }
 
 button{
@@ -71,7 +73,6 @@ button:active {
     form, .logout{
         margin-left: auto;
         margin-right: auto;
-
     }
 
     .options-container{
@@ -82,6 +83,4 @@ button:active {
         width: 60%;
         height: 10vh;
     }
-
-
 }

@@ -1,7 +1,6 @@
 <?php
 
 class AppController{
-
     private $request;
     public function __construct()
     {

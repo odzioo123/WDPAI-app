@@ -3,6 +3,11 @@
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/ProjectController.php';
+require_once 'src/controllers/AddStudentController.php';
+require_once 'src/controllers/AddUserToGroupController.php';
+require_once 'src/controllers/PlanController.php';
+require_once 'src/controllers/AddCourseController.php';
+require_once 'src/controllers/AddGroupToCourseController.php';
 
 class Routing {
     public static $routes;
@@ -23,7 +28,9 @@ class Routing {
 
         if(!array_key_exists($action, self::$routes))
         {
-            die("Wrong url!");
+            $controller = new DefaultController();
+            $controller->home();
+            exit;
         }
         $controller = self::$routes[$action];
         $object = new $controller;

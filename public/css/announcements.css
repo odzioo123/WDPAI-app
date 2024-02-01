@@ -11,13 +11,13 @@ body {
     align-items: center;
 }
 
-.back
+.buttons
 {
-    margin-top: 32em;
+    margin-left: 2em;
+    margin-top: 30em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 30%;
 
     border-radius: 2.5rem;
@@ -26,16 +26,36 @@ body {
 .announcements
 {
     margin-top: 2em;
-    margin-right: 5em;
+    margin-right: 6em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 66%;
+    border-radius: 1rem;
 
-    background-color: chocolate;
+/*background: linear-gradient(180deg, rgba(0, 90, 120, 0.40) 50%, rgba(150, 150, 10, 0.40) 100%)*/
+    background-color: #005080;
     height: 80%;
+}
+
+.announcementsList {
+    overflow: auto;
+    max-height: 90%;
+    min-height: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    padding: 0.5em;
+    margin: 3em;
+    border-radius: 0.5rem;
+    background-color: #004466;
+    color: white;
+}
+
+.announcementItem p {
+    word-wrap: break-word;
+    max-width: 99%;
 }
 
 button{
@@ -48,7 +68,7 @@ button{
     color: white;
     margin: 1em;
     font-size: 1.4em;
-    cursor: pointer;  /*łapka*/
+    cursor: pointer;
     outline: none;
 }
 
@@ -62,37 +82,56 @@ button:active {
     transform: translateY(4px);
 }
 
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+#announcementText {
+    width: 70%;
+    height: 100px;
+    border-radius: 1rem;
+    border: none;
+    margin: 1em;
+    font-size: 1em;
+    padding: 0.5em;
+    resize: none;
+}
 
 @media only screen and (max-device-width: 420px)
 {
     *{
-        font-size: 36px;
+        font-size: 22px;
     }
     .container{
         flex-direction: column-reverse;
-        margin: auto;
+        margin-bottom: auto;
     }
-    .announcements
-    {
-        margin: 2em 1em 1em;
-        height: 100%;
+    .announcements {
+        height: 65%;
         width: 85%;
+        margin: 1em auto 15em;
     }
-    .back
-    {
-        margin: auto;
+    .buttons {
+        margin-top: 1px;
         height: 12%;
-        width: 60%;
+        width: 65%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1px;
+        margin-bottom: 13em;
+    }
+    button {
+        font-size: 1.8em;
+    }
+    #announcementText {
+        font-size: 1.3em;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

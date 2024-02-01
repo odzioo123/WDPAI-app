@@ -11,13 +11,13 @@ body {
     align-items: center;
 }
 
-.back
+.buttons
 {
-    margin-top: 32em;
+    margin-left: 1em;
+    margin-top: 30em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 30%;
 
     border-radius: 2.5rem;
@@ -26,16 +26,35 @@ body {
 .forum
 {
     margin-top: 2em;
-    margin-right: 5em;
+    margin-right: 10em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
+    border-radius: 1rem;
 
-    background-color: aquamarine;
+    background-color: #3c275c;
     height: 80%;
+}
+
+.forumPostList {
+    overflow: auto;
+    max-height: 90%;
+    min-height: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    padding: 0.5em;
+    margin: 3em;
+    border-radius: 0.5rem;
+    background-color: #2d1745;
+    color: white;
+}
+
+.forumPostItem p {
+    word-wrap: break-word;
+    max-width: 99%;
 }
 
 button{
@@ -46,7 +65,7 @@ button{
     height: 7vh;
     border: none;
     color: white;
-    margin: 1em;
+    margin: 0.8em;
     font-size: 1.4em;
     cursor: pointer;  /*łapka*/
     outline: none;
@@ -62,11 +81,29 @@ button:active {
     transform: translateY(4px);
 }
 
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+#forumPostText {
+    width: 70%;
+    height: 100px;
+    border-radius: 1rem;
+    border: none;
+    margin: 1em;
+    font-size: 1em;
+    padding: 0.5em;
+    resize: none;
+}
 
 @media only screen and (max-device-width: 420px)
 {
     *{
-        font-size: 36px;
+        font-size: 22px;
     }
     .container{
         flex-direction: column-reverse;
@@ -74,25 +111,27 @@ button:active {
     }
     .forum
     {
-        margin: 2em 1em 1em;
-        height: 100%;
+        height: 65%;
         width: 85%;
+        margin: 1em auto 15em;
     }
-    .back
-    {
-        margin: auto;
+    .buttons {
+        margin-top: 1px;
         height: 12%;
-        width: 60%;
+        width: 65%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1px;
+        margin-bottom: 14em;
+    }
+    button {
+        font-size: 1.8em;
+    }
+    #forumPostText {
+        font-size: 1.3em;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
