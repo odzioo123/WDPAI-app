@@ -6,7 +6,16 @@
 </head>
 <body>
 <div class="container">
-    <div class="back">
+    <?php
+    // Check if the user is an admin
+    $isAdmin = isset($_SESSION['Admin']);
+    ?>
+
+    <div class="buttons">
+        <?php if ($isAdmin): ?>
+            <button id="addGroupToCourse">Add Group to Course</button>
+            <button id="addCourse">Add Course</button>
+        <?php endif; ?>
         <button id="backButton">Back</button>
     </div>
     <div class="plan" id="planContainer">
@@ -63,6 +72,12 @@
     <script>
         document.getElementById('backButton').addEventListener('click', function () {
             window.location.href = 'menu';
+        });
+        document.getElementById('addCourse').addEventListener('click', function () {
+            window.location.href = 'addCourse';
+        });
+        document.getElementById('addGroupToCourse').addEventListener('click', function () {
+            window.location.href = 'addGroupToCourse'; // Corrected route
         });
     </script>
 </div>

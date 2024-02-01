@@ -58,10 +58,10 @@ class GroupRepository extends Repository
     public function getGroupByName(string $groupName): ?Group
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT *
-            FROM public."Groups"
-            WHERE "GroupName" = :groupName
-        ');
+        SELECT *
+        FROM public."Groups"
+        WHERE "GroupName" = :groupName
+    ');
 
         $stmt->bindParam(':groupName', $groupName, PDO::PARAM_STR);
         $stmt->execute();

@@ -46,7 +46,7 @@ class PlanController extends AppController
             return;
         }
 
-        $coursesRepository = new CoursesRepository();
+        $coursesRepository = new CourseRepository();
         $uniqueCourses = [];
 
         foreach ($userGroups as $group)

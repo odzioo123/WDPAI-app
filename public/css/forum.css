@@ -35,7 +35,7 @@ body {
     width: 80%;
     border-radius: 1rem;
 
-    background-color: aquamarine;
+    background-color: #3c275c;
     height: 80%;
 }
 
@@ -48,8 +48,8 @@ body {
     padding: 0.5em;
     margin: 3em;
     border-radius: 0.5rem;
-    background-color: darkslateblue; /* Set the background color to black */
-    color: white; /* Set the text color to white */
+    background-color: #2d1745;
+    color: white;
 }
 
 .forumPostItem p {

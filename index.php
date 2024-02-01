@@ -25,6 +25,12 @@ Routing::post('addProject', 'ProjectController');
 Routing::get('addUserToGroup', 'DefaultController');
 Routing::post('addUserToGroupProcess', 'AddUserToGroupController');
 
+Routing::get('addCourse', 'DefaultController');
+Routing::post('addCourse', 'AddCourseController');
+
+Routing::get('addGroupToCourse', 'DefaultController');
+Routing::post('addGroupToCourse', 'AddGroupToCourseController');
+
 Routing::run($path);
 
 

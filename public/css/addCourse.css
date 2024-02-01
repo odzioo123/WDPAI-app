@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #227C9D 0%, rgba(34, 124, 157, 0.40) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 2.5rem;
+}
+
+h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+label {
+    margin-bottom: 0.5em;
+    color: white;
+    font-size: 1.2em;
+}
+
+input,
+select {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #17C3B2;
+    border-radius: 0.3em;
+    width: 25%;
+}
+
+button {
+    border-radius: 2.5rem;
+    background: radial-gradient(50% 50% at 50% 50%, #17C3B2 0%, rgba(23, 195, 178, 0.49) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 25%;
+    height: 10vh;
+    border: none;
+    color: white;
+    margin: 1em;
+    font-size: 1.4em;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background: radial-gradient(50% 50% at 50% 50%, #128C80 0%, rgba(23, 195, 178, 0.49) 100%);
+}
+
+button:active {
+    background: radial-gradient(50% 50% at 50% 50%, #128C80 0%, rgba(23, 195, 178, 0.49) 100%);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.back a {
+
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+.back a:hover {
+    color: #128C80;
+}

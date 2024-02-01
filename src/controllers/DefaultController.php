@@ -8,11 +8,11 @@ class DefaultController extends AppController {
 
     public function home()
     {
-        $this->render('home');
+        $this->render('login');
     }
     public function login()
     {
-        $this->render('login', ['messages' => ["Hello World!"]]);
+        $this->render('login');
     }
     public function registration()
     {
@@ -85,6 +85,32 @@ class DefaultController extends AppController {
         if (isset($_SESSION['Admin']))
         {
             $this->render('addUserToGroup');
+        }
+        else
+        {
+            $this->render('login');
+        }
+    }
+
+    public function addCourse()
+    {
+        session_start();
+        if (isset($_SESSION['Admin']))
+        {
+            $this->render('addCourse');
+        }
+        else
+        {
+            $this->render('login');
+        }
+    }
+
+    public function addGroupToCourse()
+    {
+        session_start();
+        if (isset($_SESSION['Admin']))
+        {
+            $this->render('addGroupToCourse');
         }
         else
         {
