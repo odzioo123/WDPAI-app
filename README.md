@@ -25,7 +25,7 @@ Application to manage students plan for every group and communicate with them by
 
 ## Installation
 -   Run `docker compose up` command in main project folder
--   Import data from `baza.sql` to database
+-   Import data from `base.sql` to database
 -   Application at ``localhost:80``
 
 ## Test accounts
