@@ -1,6 +1,14 @@
 # Plan and Announcements Manager
 
 ## Table of contents
+- [About](#about)
+- [Tech Stack](#tech-stack)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Accounts](#test-accounts)
+- [Screenshots](#screenshots)
+- [ER Diagram](#er-diagram)
+
 
 ## About
 Application to manage students plan for every group and communicate with them by class leader. The application allows adding courses, groups, students to groups and groups to specific courses, and in the end viewing the plan of yours. It also allows chatting on forum by everyone and adding announcements by class leader.
@@ -20,7 +28,7 @@ Application to manage students plan for every group and communicate with them by
 -   Import data from `baza.sql` to database
 -   Application at ``localhost:80``
 
-## ## Test accounts
+## Test accounts
 -   User account `email: odzioo` `password: zzz`
 -  User account `email: Maks@gmail.com` `password: maks`
 -   Admin account `email: admin` `password: admin`
