@@ -1,4 +1,4 @@
-# Plan and Announcements manager
+# Plan and Announcements Manager
 
 ## Table of contents
 
