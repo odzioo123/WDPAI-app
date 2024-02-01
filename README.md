@@ -1,4 +1,4 @@
-# Plan and Announcements Manager
+# Plan and Announcements Manager (for students)
 
 ## Table of contents
 - [About](#about)
