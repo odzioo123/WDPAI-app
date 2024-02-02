@@ -54,18 +54,7 @@ class DefaultController extends AppController {
             $this->render('login');
         }
     }
-    public function announcements()
-    {
-        session_start();
-        if (isset($_SESSION['Admin']) || isset($_SESSION['Student']))
-        {
-            $this->render('announcements');
-        }
-        else
-        {
-            $this->render('login');
-        }
-    }
+
     public function addStudent()
     {
         session_start();

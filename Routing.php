@@ -8,6 +8,7 @@ require_once 'src/controllers/AddUserToGroupController.php';
 require_once 'src/controllers/PlanController.php';
 require_once 'src/controllers/AddCourseController.php';
 require_once 'src/controllers/AddGroupToCourseController.php';
+require_once 'src/controllers/AnnouncementsController.php';
 
 class Routing {
     public static $routes;
