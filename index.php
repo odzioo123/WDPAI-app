@@ -11,7 +11,8 @@ Routing::get('registration', 'DefaultController');
 Routing::get('menu', 'DefaultController');
 Routing::get('plan', 'PlanController');
 Routing::get('forum', 'DefaultController');
-Routing::get('announcements', 'DefaultController');
+
+Routing::get('announcements', 'AnnouncementsController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');

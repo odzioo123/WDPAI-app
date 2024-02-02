@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addAnnouncementButton
     $adminID = $_SESSION['Admin'];
     $text = $_POST['announcementText'];
 
-
     if (empty(trim($text)))
     {
         echo '<script>alert("Announcement text cannot be empty.");</script>';
@@ -42,21 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addAnnouncementButton
 <body>
 <div class="container">
     <div class="buttons">
-        <form method="POST">
-            <?php if (isset($_SESSION['Admin'])): ?>
+        <?php if (isset($_SESSION['Admin'])): ?>
+            <form id="addAnnouncementForm" method="post" action="">
                 <textarea name="announcementText" id="announcementText" placeholder="Type your announcement here"></textarea>
-                <button type="submit" name="addAnnouncementButton">Add Announcement</button>
-            <?php endif; ?>
-            <button id="backButton">Back</button>
-        </form>
+                <button type="submit" name="addAnnouncementButton" id="addAnnouncementButton">Add Announcement</button>
+            </form>
+        <?php endif; ?>
+        <button id="backButton">Back</button>
     </div>
     <div class="announcements">
-        <div class="announcementsList">
-            <?php foreach ($announcements as $announcement): ?>
-                <div class="announcementItem">
-                    <p><?= htmlspecialchars($announcement->getText()) . ' | ' . htmlspecialchars($announcement->getTimePublished()) ?></p>
-                </div>
-            <?php endforeach; ?>
+        <div class="announcementsList" id="announcementsList">
+            <!-- Announcements will be dynamically loaded here -->
         </div>
     </div>
 
@@ -65,6 +60,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addAnnouncementButton
             event.preventDefault();
             window.location.href = 'menu';
         });
+
+        function loadAnnouncements() {
+            fetch('public/views/fetchAnnouncements.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.includes('application/json')) {
+                        return response.json();
+                    } else {
+                        throw new Error('Response is not in JSON format');
+                    }
+                })
+                .then(announcements => {
+                    var announcementsList = document.getElementById('announcementsList');
+                    announcementsList.innerHTML = '';
+
+                    announcements.forEach(announcement => {
+                        var announcementItem = document.createElement('div');
+                        announcementItem.className = 'announcementItem';
+                        announcementItem.innerHTML = '<p>' + announcement.text + ' | ' + announcement.timePublished + '</p>';
+                        announcementsList.appendChild(announcementItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error during fetch:', error);
+                });
+        }
+        loadAnnouncements();
     </script>
 </div>
 </body>
