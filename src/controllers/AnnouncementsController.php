@@ -17,24 +17,5 @@ class AnnouncementsController extends AppController {
             $this->render('login');
         }
     }
-
-    public function fetchAnnouncements() {
-        $announcementRepository = new AnnouncementRepository();
-        $announcements = $announcementRepository->getAnnouncements();
-
-        $result = [];
-
-        foreach ($announcements as $announcement) {
-            $result[] = [
-                'text' => htmlspecialchars($announcement->getText()),
-                'timePublished' => htmlspecialchars($announcement->getTimePublished())
-            ];
-        }
-
-        header('Content-Type: application/json');
-        echo json_encode($result);
-
-        die();
-    }
 }
 
