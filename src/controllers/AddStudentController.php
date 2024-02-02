@@ -13,6 +13,13 @@ class AddStudentController extends AppController
         if ($this->isPost())
         {
             $email = $_POST['email'];
+
+            $userRepository = new UserRepository();
+            if ($userRepository->getUser($email)) {
+                $this->render('addStudent', ['error' => 'User with this email already exists.']);
+                return;
+            }
+
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $name = $_POST['name'];
             $surname = $_POST['surname'];
